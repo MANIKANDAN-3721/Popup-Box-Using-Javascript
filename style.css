@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   background: #e3f2fd;
+}
+button{
+    padding: 20px 40px;
+    border: none;
+    background: #4070f4;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+}
+button:hover {
+        background-position: right center; 
+        color: #fff;
+        text-decoration: none;
+      }
+    
+button.show-modal,.modal-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background:  rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+}
+.modal-box{
+    max-width: 380px;
+    width: 100%;
+    background: #fff;
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
+}
+.buttons{
+    padding: 8px 12px;
+    margin: 0 10px;
+}
+.modal-box button{
+    padding: 6px 12px ;
+    margin: 0 10px;
+}
+
+section.active .show-modal{
+    display: none;
+}
+section.active .overlay{
+    opacity: 0;
+    pointer-events: auto;
+}
+section.active .modal-box{
+    opacity: 1;
+    pointer-events: auto;
+}
